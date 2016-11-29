@@ -259,3 +259,4 @@ print()
 
 print('Sample size: ' + str(sampleSize[sampleLookUp]['sampleQty']))
 print('Accept/Reject: ' + str(sampleSize[sampleLookUp][aqlLevel]))
+print()
