@@ -131,7 +131,7 @@ sampleSize = {'A': {'sampleQty': 2,
                     'aql-1': {'accept': 0, 'reject': 1},
                     'aql-1.5': {'accept': 0, 'reject': 1},
                     },
-              'b': {'sampleQty': 3,
+              'B': {'sampleQty': 3,
                     'aql-1': {'accept': 0, 'reject': 1},
                     'aql-1.5': {'accept': 0, 'reject': 1},
                     },          
@@ -198,6 +198,36 @@ sampleSize = {'A': {'sampleQty': 2,
 
 print('What size is the lot?')
 lotSize = int(input())
+if lotSize >= 500001:
+    lotSize = 500001
+elif lotSize >= 150001:
+    lotSize = 500000
+elif lotSize >= 35001:
+    lotSize = 150000
+elif lotSize >= 10001:
+    lotSize = 35000
+elif lotSize >= 3201:
+    lotSize = 10000
+elif lotSize >= 1201:
+    lotSize = 3200
+elif lotSize >= 501:
+    lotSize = 1200
+elif lotSize >= 281:
+    lotSize = 500
+elif lotSize >= 151:
+    lotSize = 280
+elif lotSize >= 91:
+    lotSize = 150
+elif lotSize >= 51:
+    lotSize = 90
+elif lotSize >= 26:
+    lotSize = 50
+elif lotSize >= 16:
+    lotSize = 25
+elif lotSize >= 9:
+    lotSize = 15
+else:
+    lotSize = 8
 
 print('Choose an inspection level. (S-1, S-2, S-3, S-4, I, II, III)')
 inspectionLevel = input()
@@ -212,11 +242,13 @@ elif aqlLevel == '1.5':
 else:
     print('not 1.0 or 1.5')
 
-print('Lot size: ' + str(lotSize))
-print('Inspection level: ' + str(inspectionLevel))
-print()
-
 sampleLookUp = lotSizeCode[lotSize][inspectionLevel]
+
+print()
+print('Lot size max: ' + str(lotSize))
+print('Inspection level: ' + str(inspectionLevel))
+print('Sample code: ' + str(sampleLookUp))
+print()
 
 # TODO: make it sort so accept is always first
 
