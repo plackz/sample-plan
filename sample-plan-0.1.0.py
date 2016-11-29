@@ -99,7 +99,7 @@ print()
 
 # TODO: make it sort so accept is always first
 
-
+# TODO: not working always going to else block
 if str(inspectionPlan) == 1:
     # TODO: need to make a function to reduce code
     print('Sample size: ' + str(sampN.sampleSizeNormal[sampleLookUp]['sampleQty']))
