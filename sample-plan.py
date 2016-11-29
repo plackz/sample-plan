@@ -194,7 +194,7 @@ sampleSize = {'A': {'sampleQty': 2,
               }
 
 # TODO: add in while statements as error proofing
-# TODO: add logic to change input number to one of the maximums
+# add logic to change input number to one of the maximums
 
 print('What size is the lot?')
 lotSize = int(input())
@@ -229,13 +229,18 @@ elif lotSize >= 9:
 else:
     lotSize = 8
 
-print('Choose an inspection level. (S-1, S-2, S-3, S-4, I, II, III)')
+print('Choose an inspection level. (S-1, S-2, S-3, S-4, I, II(default), III)')
 inspectionLevel = input()
+if inspectionLevel == '':
+    inspectionLevel = 'II'
+    
 
-print('Choose AQL. (1.0 or 1.5)')
+print('Choose AQL. (1.0(default) or 1.5)')
 aqlLevel = input()
+if aqlLevel == '':
+    aqlLevel = '1.0'
 
-if aqlLevel == '1.0':
+if aqlLevel == '1.0' or '':
     aqlLevel = 'aql-1'
 elif aqlLevel == '1.5':
     aqlLevel = 'aql-1.5'
