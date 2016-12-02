@@ -1,13 +1,13 @@
 #! python3
-# sample-plan-normal.py
+# sample-plan-reduced.py
 
 # TODO: add normal, tightened, reduced inspection
 # TODO: make a function with command line arguments
 
-import lotSizeCode, singleNormal
+import lotSizeCode, singleReduced
 
 code = lotSizeCode
-sNorm = singleNormal
+sReduc = singleReduced
 
 # TODO: add in while statements as error proofing
 # add logic to change input number to one of the maximums
@@ -16,8 +16,11 @@ running = True
 
 while running:
     print('============================================================')
+    print('ISO 2859-1:1999 Reduced Inspection Sampling Program')
+    print('============================================================')      
     print('Enter lot size. (enter 0 to exit)')
     lotSize = int(input())
+
     if lotSize == 0:
         break
     elif lotSize >= 500001:
@@ -79,6 +82,6 @@ while running:
 
     # TODO: make it sort so accept is always first
 
-    print('Sample size: ' + str(sNorm.inspectionTable[sampleLookUp]['sampleQty']))
-    print('Accept/Reject: ' + str(sNorm.inspectionTable[sampleLookUp][aqlLevel]))
+    print('Sample size: ' + str(sReduc.inspectionTable[sampleLookUp]['sampleQty']))
+    print('Accept/Reject: ' + str(sReduc.inspectionTable[sampleLookUp][aqlLevel]))
     print() 
