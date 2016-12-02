@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # Normal inspection data
 
+=======
+>>>>>>> 4b967ebd20534c304eb45f2c4f96cb604a1a4582
 lotSizeCode = {8: {'S-1': 'A',
                    'S-2': 'A',
                    'S-3': 'A',

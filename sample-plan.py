@@ -12,6 +12,7 @@ sNorm = singleNormal
 # TODO: add in while statements as error proofing
 # add logic to change input number to one of the maximums
 
+<<<<<<< HEAD
 running = True
 
 while running:
@@ -21,6 +22,14 @@ while running:
     if lotSize == 0:
         break
     elif lotSize >= 500001:
+=======
+counter = 0
+
+while counter < 1:
+    print('What size is the lot?')
+    lotSize = int(input())
+    if lotSize >= 500001:
+>>>>>>> 4b967ebd20534c304eb45f2c4f96cb604a1a4582
         lotSize = 500001
     elif lotSize >= 150001:
         lotSize = 500000
@@ -50,6 +59,7 @@ while running:
         lotSize = 15
     else:
         lotSize = 8
+<<<<<<< HEAD
 
     print('Choose an inspection level. (II(default), S-1, S-2, S-3, S-4, I, III)')
     inspectionLevel = input()
@@ -82,3 +92,47 @@ while running:
     print('Sample size: ' + str(sNorm.inspectionTable[sampleLookUp]['sampleQty']))
     print('Accept/Reject: ' + str(sNorm.inspectionTable[sampleLookUp][aqlLevel]))
     print() 
+=======
+
+    print('Choose an inspection level. (II(default), S-1, S-2, S-3, S-4, I, III)')
+    inspectionLevel = input()
+    if inspectionLevel == '':
+        inspectionLevel = 'II'
+        
+
+    print('Choose AQL. (1.0(default) or 1.5)')
+    aqlLevel = input()
+    if aqlLevel == '':
+        aqlLevel = '1.0'
+
+    if aqlLevel == '1.0' or '':
+        aqlLevel = 'aql-1'
+    elif aqlLevel == '1.5':
+        aqlLevel = 'aql-1.5'
+    else:
+        print('not 1.0 or 1.5')
+
+    sampleLookUp = lotSizeCode[lotSize][inspectionLevel]
+
+    print()
+    print('Lot size max: ' + str(lotSize))
+    print('Inspection level: ' + str(inspectionLevel))
+    print('Sample code: ' + str(sampleLookUp))
+    print()
+
+    # TODO: make it sort so accept is always first
+
+    print('Sample size: ' + str(sampleSize[sampleLookUp]['sampleQty']))
+    print('Accept/Reject: ' + str(sampleSize[sampleLookUp][aqlLevel]))
+    print()
+
+    print('Do you have another query? Y/N' )
+    counterInput = input()
+    if counterInput is 'Y' or 'y':
+        counter = 0
+        print()
+    else:
+        counter = 1
+    
+
+>>>>>>> 4b967ebd20534c304eb45f2c4f96cb604a1a4582
